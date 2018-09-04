@@ -44,15 +44,21 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>-->
 
-        <table schema="light" tableName="user" domainObjectName="User">
+        <!--<table schema="light" tableName="user" domainObjectName="User">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
+        </table>-->
        <!-- <table schema="light" tableName="foot_match" domainObjectName="FootMatch">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
         <table schema="light" tableName="foot_plan" domainObjectName="FootPlan">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>-->
+        <table schema="light" tableName="forum_info" domainObjectName="ForumInfo">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table schema="light" tableName="forum_message" domainObjectName="ForumMessage">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
     </context>
 
 </generatorConfiguration>

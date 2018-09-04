@@ -1,7 +1,8 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <jmxConfigurator/>
-    <property name="logDir" value="/opt/logs/light" />
+    <springProperty scope="context" name="logLevel" source="log.level"/>
+    <springProperty scope="context" name="logDir" source="log.path"/>
 
     <appender name="appLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${logDir}/app.log</file>
@@ -45,15 +46,15 @@
 
 
 
-    <logger name="order" level="@log.level@" additivity="false">
+    <logger name="order" level="${logLevel}" additivity="false">
         <appender-ref ref="order"/>
     </logger>
 
-    <logger name="err" level="@log.level@" additivity="false">
+    <logger name="err" level="${logLevel}" additivity="false">
         <appender-ref ref="err"/>
     </logger>
 
-    <root level="@log.level@">
+    <root level="${logLevel}">
         <appender-ref ref="appLog"/>
     </root>
 </configuration>

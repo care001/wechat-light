@@ -51,3 +51,27 @@ CREATE TABLE `user` (
   `wx_img` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `forum_info` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `name` varchar(128) DEFAULT NULL,
+  `info` text DEFAULT NULL,
+  `hot` bigint(20) DEFAULT NULL,
+  `status` varchar(32) DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT NULL COMMENT '生成时间',
+  `update_time` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章';
+
+CREATE TABLE `forum_message` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(128) DEFAULT NULL,
+  `forum_info_id` varchar(128) DEFAULT NULL,
+  `info` varchar(512) NULL,
+  `hot` bigint(20) DEFAULT NULL,
+  `status` varchar(32) DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT NULL COMMENT '生成时间',
+  `update_time` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='回复';
