@@ -5,17 +5,17 @@ cmd_mvn=" mybatis-generator:generate"
 cmd_generate=" -Dmybatis.generator.configurationFile"
 
 
-generateFile=( "src/main/resources/mybatis_table.xml" )
+generateFile=( "src/main/resources/generatorConfig-base.xml" )
 
 for s in ${generateFile[@]}
-do 
+do
      cmd=""
 
      echo ""
 	 echo ""
      echo "generate------>>> $s"
 
- if [ -z "$s" ] 
+ if [ -z "$s" ]
  then
       echo $cmd_mvn
       cmd="$cmd_mvn"
@@ -24,14 +24,14 @@ do
       cmd="$cmd_mvn $cmd_generate=$s"
  fi
 
-    
+
     echo $cmd
 
     mvn $cmd
-	
+
 	echo ""
 	echo ""
-	
+
 done
 
 echo " "

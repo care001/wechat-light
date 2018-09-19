@@ -11,10 +11,12 @@ public enum  ErrorCode
     REFLEX_ERR("100002","反射处理异常"),
 
     //2业务错误
-    LOGIN_ERR("200001","您还没有登录"),
+    LOGIN_NO_ERR("200001","您还没有登录"),
+    LOGIN_POWER_ERR("200002","用户角色错误，无法查看信息"),
 
+    FORUM_INFO_NOT_EXIST("210001","帖子不存在"),
 
-
+    FORUM_MESSAGE_NOT_EXIST("210002","回复不存在"),
     ;
 
 

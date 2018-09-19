@@ -66,8 +66,8 @@ CREATE TABLE `forum_info` (
 
 CREATE TABLE `forum_message` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` varchar(128) DEFAULT NULL,
-  `forum_info_id` varchar(128) DEFAULT NULL,
+  `user_id` BIGINT(20) DEFAULT NULL,
+  `forum_info_id` BIGINT(20) DEFAULT NULL,
   `info` varchar(512) NULL,
   `hot` bigint(20) DEFAULT NULL,
   `status` varchar(32) DEFAULT NULL,

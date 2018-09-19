@@ -32,7 +32,6 @@ public class MyExceptionHandler {
     public Result handler(HttpServletRequest req, Exception e) throws Exception {
         Result result = Result.create(ErrorCode.FAIL);
         String msg = e.getMessage();
-        log.error(msg, e);
         if (e instanceof ErrorCodeException) {
             return Result.create(e);
         }else if (e instanceof MethodArgumentNotValidException){
@@ -44,7 +43,6 @@ public class MyExceptionHandler {
             msg = we.getFieldErrors().get(0).getDefaultMessage();
             return Result.create(METHOD_ERR, msg);
         }
-
         /**
          * 如果有中文，错误信息为中文
          *  如果没有中文，按照异常类型进行翻译。
@@ -52,6 +50,9 @@ public class MyExceptionHandler {
         else if (null != msg && MyStringUtils.isContainsChinese(msg)) {
             return Result.create(MY_ERR, msg);
         }
+
+        log.error(msg, e);
+
         return result;
     }
 

@@ -1,15 +1,15 @@
-package com.github.care.wx.mp.service.dto;
+package com.github.care.wx.mp.domain.base;
 
 import java.util.List;
 
 public class Page<T> {
 
-    private static final int PAGE_SIZE = 2;
+    private static final int PAGE_SIZE = 10;
 
     public int pageSize = PAGE_SIZE;
     public int pageNo = 1;
-    public long totalSum = -1;
-    public int totalPage = -1;
+    private long total;
+    private int pages;
 
     public List<T> results;
 
@@ -30,20 +30,20 @@ public class Page<T> {
         this.pageNo = pageNo;
     }
 
-    public long getTotalSum() {
-        return totalSum;
+    public long getTotal() {
+        return total;
     }
 
-    public void setTotalSum(long totalSum) {
-        this.totalSum = totalSum;
+    public void setTotal(long total) {
+        this.total = total;
     }
 
-    public int getTotalPage() {
-        return totalPage;
+    public int getPages() {
+        return pages;
     }
 
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 
     public List<T> getResults() {
