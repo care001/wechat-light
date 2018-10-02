@@ -58,8 +58,8 @@ public class BbsController extends BaseController{
         return Result.create(bbsService.deleteMessage(loginUser.getUserId(), messageId));
     }
 
-    @PostMapping("/allForum")
+   /* @PostMapping("/allForum")
     public Result<PageInfo<ForumInfo>> deleteMessage(@RequestBody PageParam pageParam){
         return Result.create(bbsService.deleteMessage(loginUser.getUserId(), messageId));
-    }
+    }*/
 }

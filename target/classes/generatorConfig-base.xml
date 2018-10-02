@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="loan" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://139.196.36.243:3918/diversion_01"
+                        userId="admin"
+                        password="42P%*FdfA323JSD%2s45">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.ss.derive.loanplatform.dao.po" targetProject="MAVEN">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.ss.derive.loanplatform.dao.mapper"
+                         targetProject="MAVEN">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ss.derive.loanplatform.dao.mapper"
+                             targetProject="MAVEN">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- configure detail table info -->
+
+        <!--<table schema="diversion_01" tableName="dl_apply_condition" domainObjectName="DlApplyCondition">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_channel" domainObjectName="DlChannel">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_channel_source" domainObjectName="DlChannelSource">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>-->
+
+        <table schema="diversion_01" tableName="retention_time" domainObjectName="RetentionTime">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <!--<table schema="diversion_01" tableName="dl_loan_platform" domainObjectName="DlLoanPlatform">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_loan_platform_apply_condition" domainObjectName="DlLoanPlatformApplyCondition">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_loan_platform_apply_info" domainObjectName="DlLoanPlatformApplyInfo">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_loan_platform_tag" domainObjectName="DlLoanPlatformTag">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_page_ad" domainObjectName="DlPageAd">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_sys_constant" domainObjectName="DlSysConstant">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="dl_user_loanplatform_visit" domainObjectName="DlUserLoanPlatformVisit">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="uc_login" domainObjectName="UcLogin">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table schema="diversion_01" tableName="uc_user" domainObjectName="UcUser">
+        <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>-->
+
+    </context>
+
+</generatorConfiguration>
